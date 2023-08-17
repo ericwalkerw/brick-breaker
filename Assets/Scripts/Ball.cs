@@ -33,7 +33,9 @@ public class Ball : MonoBehaviour
 
         _initialDistanceToTopOfPaddle = ballPosition - paddlePosition;  // assumes ball always starts on TOP of the paddle
     }
-    
+
+
+
     private void Update()
     {
         // if ball has been shot, no locking or shooting it again!

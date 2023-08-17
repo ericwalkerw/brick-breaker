@@ -2,7 +2,6 @@
 
 public class Block : MonoBehaviour
 {
-    
     // configuration
     [SerializeField] public AudioClip destroyedBlockSound;
     [SerializeField] public float soundVolume = 0.05f;
@@ -122,5 +121,8 @@ public class Block : MonoBehaviour
         Quaternion blockRotation = this.transform.rotation;
         
         GameObject destroyedBlockParticles = Instantiate(destroyedBlockParticlesVFX, blockPosition, blockRotation);
+
+        // Chỗ này spawn Potiton nè 
+        PotionManeger.Instance.PotionSpawn(transform);
     }
 }

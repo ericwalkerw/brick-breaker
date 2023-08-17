@@ -51,7 +51,6 @@ public class GameSession : MonoBehaviour
     void Update()
     {
         Time.timeScale = this.GameSpeed;
-        
         // UI updates
         playerScoreText.text = this.PlayerScore.ToString();
         gameLevelText.text = this.GameLevel.ToString();
