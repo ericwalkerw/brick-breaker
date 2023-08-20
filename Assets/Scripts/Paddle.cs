@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using Codice.CM.Common;
 using System;
 
 public class Paddle : MonoBehaviour, IReceiveBuff

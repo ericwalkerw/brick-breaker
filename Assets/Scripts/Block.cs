@@ -10,7 +10,7 @@ public class Block : MonoBehaviour
     [SerializeField] public Sprite[] damageSprites;
 
     // references to other objects
-    private LevelController _levelController;
+    private LevelMapManeger _levelController;
     private Vector3 _soundPosition;
 
     // state
@@ -19,7 +19,7 @@ public class Block : MonoBehaviour
     void Start()
     {
         // selects other game object without SCENE binding: programatically via API
-        _levelController = FindObjectOfType<LevelController>();
+        _levelController = FindObjectOfType<LevelMapManeger>();
         _soundPosition = FindObjectOfType<Camera>().transform.position;
 
         // increment the block counter if the block's breakable

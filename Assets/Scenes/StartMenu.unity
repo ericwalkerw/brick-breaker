@@ -476,7 +476,7 @@ MonoBehaviour:
   - {fileID: 3996657153930075927, guid: 124db833eaf9d4f429e36fc2cd34ba6d, type: 3}
   - {fileID: 3916335507277087748, guid: edfb4374328b34c4ea4b9cec4cc1ad9e, type: 3}
   - {fileID: 7718118751872285304, guid: 7ebeac0cfdfcd0f44907e563183a175d, type: 3}
-  DropPercent: 25
+  DropPercent: 100
 --- !u!4 &517283185
 Transform:
   m_ObjectHideFlags: 0
