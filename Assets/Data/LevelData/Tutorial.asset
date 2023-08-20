@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Tutorial
   m_EditorClassIdentifier: 
   levelName: Tutorial
+  star: 3
+  isUnLock: 1

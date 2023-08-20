@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: 9
   m_EditorClassIdentifier: 
   levelName: 9
+  star: 0
+  isUnLock: 0

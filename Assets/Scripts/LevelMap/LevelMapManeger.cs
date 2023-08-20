@@ -11,17 +11,16 @@ namespace Assets.Scripts.LevelMap
         public List<LevelData> _data;
         public EnhancedScroller scroller;
         public EnhancedScrollerCellView cellViewPrefab;
-
         public int numberOfCellsPerRow = 3;
-        private List<LevelCellView> ListCell = new List<LevelCellView>();
         private void OnEnable()
         {
             
         }
         void Start()
         {
-            Reverse();
+            LevelUI.Instance.StarUpdate(SumStar());
             scroller.Delegate = this;
+            UnlockNextLevel();
         }
         #region EnhancedScroller Handlers
         public int GetNumberOfCells(EnhancedScroller scroller)
@@ -39,7 +38,6 @@ namespace Assets.Scripts.LevelMap
             LevelCellView cellView = scroller.GetCellView(cellViewPrefab) as LevelCellView;
             cellView.name = "Cell " + (dataIndex * numberOfCellsPerRow).ToString() + " to " + (dataIndex * numberOfCellsPerRow + numberOfCellsPerRow - 1).ToString();
             cellView.SetData(ref _data, dataIndex * numberOfCellsPerRow, dataIndex);
-            ListCell.Add(cellView);
             return cellView;
         }
 
@@ -50,7 +48,27 @@ namespace Assets.Scripts.LevelMap
             scroller.ScrollRect.verticalNormalizedPosition = 1;
             //_data.Reverse();
         }
+
+        public int SumStar()
+        {
+            int sum = 0;
+            foreach (var item in _data)
+            {
+                sum += item.star;
+            }
+            return sum;
+        }
+
+        public void UnlockNextLevel()
+        {
+            for (int i = 0; i < _data.Count - 1; i++)
+            {
+                if (_data[i].UnlockLevel())
+                {
+                    _data[i + 1].isUnLock = true;
+                    LevelUI.Instance.LevelUpdate(i+1);
+                }
+            }
+        }
     }
-
-
 }

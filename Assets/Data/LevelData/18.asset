@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa1a719d08406448b1056252ee36e8b, type: 3}
   m_Name: 18
   m_EditorClassIdentifier: 
-  levelName: Tutorial
+  levelName: 18
+  star: 0
+  isUnLock: 0

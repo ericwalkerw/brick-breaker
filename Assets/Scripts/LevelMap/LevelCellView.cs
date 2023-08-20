@@ -7,7 +7,6 @@ public class LevelCellView : EnhancedScrollerCellView
 {
     public LevelRowCellView[] rowCellViews;
     public GridLayoutGroup layout;
-    int count = 0;
     public void SetData(ref List<LevelData> data, int startingIndex, int row)
     {
         if (row %2 != 0)
