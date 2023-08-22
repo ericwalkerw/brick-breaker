@@ -34,8 +34,4 @@ public class SceneLoader : MonoBehaviour
    /**
     * Hides the mouse cursor.
     */
-   public void Start()
-   {
-      Cursor.visible = false;
-   }
 }

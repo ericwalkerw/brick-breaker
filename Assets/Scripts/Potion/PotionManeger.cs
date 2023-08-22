@@ -32,11 +32,4 @@ public class PotionManeger : MonoBehaviour
             Destroy(x, 3f);
         }
     }
-
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space)) {
-            GameObject x = Instantiate(listPotion[0], new Vector3(8,8,0), Quaternion.identity);
-        }
-    }
 }

@@ -41,7 +41,7 @@ public class GameSession : MonoBehaviour
     void Start()
     {
         playerScoreText.text = this.PlayerScore.ToString();
-        gameLevelText.text = this.GameLevel.ToString();
+        gameLevelText.text = $"{GameManeger.instance.listData.data[GameManeger.instance.id].levelName}";
         playerLivesText.text = this.PlayerLives.ToString();
     }
 
@@ -53,7 +53,7 @@ public class GameSession : MonoBehaviour
         Time.timeScale = this.GameSpeed;
         // UI updates
         playerScoreText.text = this.PlayerScore.ToString();
-        gameLevelText.text = this.GameLevel.ToString();
+        gameLevelText.text = $"{GameManeger.instance.listData.data[GameManeger.instance.id].levelName}";
         playerLivesText.text = this.PlayerLives.ToString();
     }
 

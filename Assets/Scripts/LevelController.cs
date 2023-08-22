@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class LevelMapManeger : MonoBehaviour
+public class LevelController : MonoBehaviour
 {
     private readonly string GAME_OVER_SCENE_NAME = "Scenes/GameOver";
     private readonly int NUMBER_OF_GAME_LEVELS = 3;
@@ -40,7 +37,8 @@ public class LevelMapManeger : MonoBehaviour
 
             // increases game level
             gameSession.GameLevel++;
-            _sceneLoader.LoadNextScene();
+            GameManeger.instance.listData.data[GameManeger.instance.id].star += 3;
+            _sceneLoader.LoadSceneByName("LevelMap");
         }
     }
     

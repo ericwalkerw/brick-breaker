@@ -81,7 +81,7 @@ public class GameConfig
         gameModeConfig.Add("playerScore", 0);
         
         // initial level
-        gameModeConfig.Add("gameLevel", 1);
+        gameModeConfig.Add("GamePlay", 1);
         
         return gameModeConfig;
     }

@@ -28,6 +28,6 @@ public class GameSessionLoader : MonoBehaviour
         this._gameSession.PointsPerBlock = (int) gameModeConfig["pointsPerBlock"];
         this._gameSession.GameSpeed = (float) gameModeConfig["gameSpeed"];
         this._gameSession.PlayerScore = (int) gameModeConfig["playerScore"];
-        this._gameSession.GameLevel = (int) gameModeConfig["gameLevel"];
+        this._gameSession.GameLevel = (int) gameModeConfig["GamePlay"];
     }
 }
