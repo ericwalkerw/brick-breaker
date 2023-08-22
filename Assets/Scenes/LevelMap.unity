@@ -230,6 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: 0f31fadd170454641b79490c8e71d788, type: 2}
+  _userData: {fileID: 0}
   scroller: {fileID: 1349023324}
   cellViewPrefab: {fileID: 8390589737173214978, guid: 08f310b05dcfc504bbed37b1b47dd22e,
     type: 3}
@@ -548,7 +549,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16a81698938152b4f8a2c648f22d5f76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listData: {fileID: 11400000, guid: 0f31fadd170454641b79490c8e71d788, type: 2}
+  config: {fileID: 11400000, guid: 0f31fadd170454641b79490c8e71d788, type: 2}
+  userData: {fileID: 11400000, guid: a844dfee182394e40a3f20cbf17bb677, type: 2}
   id: 0
   levelAsset: {fileID: 0}
 --- !u!4 &854581142

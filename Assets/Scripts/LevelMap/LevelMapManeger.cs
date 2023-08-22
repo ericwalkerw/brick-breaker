@@ -7,13 +7,16 @@ namespace Assets.Scripts.LevelMap
 {
     public class LevelMapManeger : MonoBehaviour, IEnhancedScrollerDelegate
     {
-        public ListData _data;
+        [HideInInspector] public ListData _data;
+        [HideInInspector] public UserData _userData;
         public EnhancedScroller scroller;
         public EnhancedScrollerCellView cellViewPrefab;
 
         public int numberOfCellsPerRow = 3;
         void Start()
         {
+            _data = GameManeger.instance.config;
+            _userData = GameManeger.instance.userData;
             scroller.Delegate = this;
             LevelUI.Instance.StarUpdate(SumStar());
             UnLockNextLevel();
@@ -21,7 +24,7 @@ namespace Assets.Scripts.LevelMap
         #region EnhancedScroller Handlers
         public int GetNumberOfCells(EnhancedScroller scroller)
         {
-            return Mathf.CeilToInt((_data.data.Count) / (float)numberOfCellsPerRow);
+            return Mathf.CeilToInt((_data.dataConfig.Count) / (float)numberOfCellsPerRow);
         }
 
         public float GetCellViewSize(EnhancedScroller scroller, int dataIndex)
@@ -33,7 +36,8 @@ namespace Assets.Scripts.LevelMap
         {
             LevelCellView cellView = scroller.GetCellView(cellViewPrefab) as LevelCellView;
             cellView.name = "Cell " + (dataIndex * numberOfCellsPerRow).ToString() + " to " + (dataIndex * numberOfCellsPerRow + numberOfCellsPerRow - 1).ToString();
-            cellView.SetData(ref _data.data, dataIndex * numberOfCellsPerRow, dataIndex);
+            cellView.SetData(ref _data.dataConfig, dataIndex * numberOfCellsPerRow, dataIndex);
+            cellView.SetUserData(ref _userData.data, dataIndex * numberOfCellsPerRow, dataIndex);
             return cellView;
         }
         #endregion
@@ -47,7 +51,7 @@ namespace Assets.Scripts.LevelMap
         public int SumStar()
         {
             int sum = 0;
-            foreach (var item in _data.data)
+            foreach (var item in _userData.data)
             {
                 if (item.star != 0)
                 {
@@ -59,11 +63,12 @@ namespace Assets.Scripts.LevelMap
 
         public void UnLockNextLevel()
         {
-            for (int i = 0; i < _data.data.Count; i++)
+            for (int i = 0; i < _userData.data.Count; i++)
             {
-                if (_data.data[i].UnLock())
+                if (_userData.data[i].UnLock())
                 {
-                    _data.data[i+1].isUnLock = true;
+                    _userData.data[i].isUnLock = true;
+                    _userData.data[i + 1].isUnLock = true;
                 }
             }
         }

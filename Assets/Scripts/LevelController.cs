@@ -37,7 +37,7 @@ public class LevelController : MonoBehaviour
 
             // increases game level
             gameSession.GameLevel++;
-            GameManeger.instance.listData.data[GameManeger.instance.id].star += 3;
+            GameManeger.instance.userData.data[GameManeger.instance.id].star += 3;
             _sceneLoader.LoadSceneByName("LevelMap");
         }
     }

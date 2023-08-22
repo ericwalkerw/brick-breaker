@@ -20,13 +20,14 @@ public class GameManeger : MonoBehaviour
     }
     #endregion
 
-    public ListData listData;
-    public int id;
+    public ListData config;
+    public UserData userData;
 
+    public int id;
     public TextAsset levelAsset;
     public void GetAsset(int id)
     {
         this.id = id;
-        levelAsset = listData.data[id].levelAsset;
+        levelAsset = config.dataConfig[id].levelAsset;
     }
 }

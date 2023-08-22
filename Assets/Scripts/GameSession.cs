@@ -40,9 +40,8 @@ public class GameSession : MonoBehaviour
      */
     void Start()
     {
-        playerScoreText.text = this.PlayerScore.ToString();
-        gameLevelText.text = $"{GameManeger.instance.listData.data[GameManeger.instance.id].levelName}";
-        playerLivesText.text = this.PlayerLives.ToString();
+        playerScoreText.text = $"{this.PlayerScore}";
+        playerLivesText.text = $"{this.PlayerLives}";
     }
 
     /**
@@ -52,9 +51,9 @@ public class GameSession : MonoBehaviour
     {
         Time.timeScale = this.GameSpeed;
         // UI updates
-        playerScoreText.text = this.PlayerScore.ToString();
-        gameLevelText.text = $"{GameManeger.instance.listData.data[GameManeger.instance.id].levelName}";
-        playerLivesText.text = this.PlayerLives.ToString();
+        playerScoreText.text = $"{this.PlayerScore}";
+        gameLevelText.text = $"{GameManeger.instance.config.dataConfig[GameManeger.instance.id].levelName}";
+        playerLivesText.text = $"{this.PlayerLives}";
     }
 
     /**
@@ -64,6 +63,6 @@ public class GameSession : MonoBehaviour
     public void AddToPlayerScore(int blockMaxHits)
     {
         this.PlayerScore += blockMaxHits * this.PointsPerBlock;
-        playerScoreText.text = this.PlayerScore.ToString();
+        playerScoreText.text = $"{this.PlayerScore}";
     }
 }

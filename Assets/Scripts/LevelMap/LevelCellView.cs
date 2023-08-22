@@ -9,7 +9,7 @@ public class LevelCellView : EnhancedScrollerCellView
     public LevelRowCellView[] rowCellViews;
     public GridLayoutGroup layout;
     int count = 0;
-    public void SetData(ref List<Data> data, int startingIndex, int row)
+    public void SetData(ref List<DataLevelConfig> data, int startingIndex, int row)
     {
         if (row %2 != 0)
         {
@@ -18,6 +18,14 @@ public class LevelCellView : EnhancedScrollerCellView
         for (var i = 0; i < rowCellViews.Length; i++)
         {
             rowCellViews[i].SetData(startingIndex + i < data.Count ? data[startingIndex + i] : null);
+        }
+    }
+
+    public void SetUserData(ref List<Data>data, int startingIndex, int row)
+    {
+        for (int i = 0; i < rowCellViews.Length; i++)
+        {
+            rowCellViews[i].SetUserData(startingIndex + i < data.Count ? data[startingIndex + i] : null);
         }
     }
 }

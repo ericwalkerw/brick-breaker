@@ -3,30 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Data
+public class DataLevelConfig
 {
     public int id;
     public string levelName;
-    public int star;
-    public bool isUnLock;
     public TextAsset levelAsset;
-    public bool UnLock() => star >= 2;
 }
+
 [CreateAssetMenu()]
 public class ListData : ScriptableObject
 {
-    public List<Data> data = new List<Data>();
+    public List<DataLevelConfig> dataConfig = new List<DataLevelConfig>();
 
 #if UNITY_EDITOR
     private void OnValidate()
     {
-        for (int i = 1; i < data.Count; i++)
+        for (int i = 1; i < dataConfig.Count; i++)
         {
-            data[0].levelName = "Tutorial";
-            data[i].id = i;
-            data[i].levelName = i.ToString();
+            dataConfig[0].levelName = "Tutorial";
+            dataConfig[i].id = i;
+            dataConfig[i].levelName = i.ToString();
         }
     }
-
 #endif
 }
